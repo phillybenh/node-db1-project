@@ -1,6 +1,7 @@
 module.exports = {
     isValidPOST,
-    isValidPUT
+    isValidPUT,
+    isValidQuery
 }
 
 function isValidPOST(account) {
@@ -9,4 +10,8 @@ function isValidPOST(account) {
 
 function isValidPUT(account) {
     return Boolean(account.name || account.budget);
+}
+
+function isValidQuery(query) {
+    return Boolean(query.limit && query.sortby)
 }
